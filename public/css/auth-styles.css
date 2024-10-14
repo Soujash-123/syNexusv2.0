@@ -1,0 +1,164 @@
+/* auth-styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+h1 span.sy {
+    color: #4b6cb7;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+}
+
+button {
+    background-color: #4b6cb7;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3a5a9f;
+}
+
+.error {
+    color: #ff6b6b;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #4b6cb7;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin-top: 1rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+#welcome-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    z-index: 1000;
+}
+
+#welcome-content {
+    text-align: center;
+    color: #333;
+}
+
+#welcome-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#welcome-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    padding: 4px;
+    position: relative;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: none;
+    color: #333;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.button-group::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background-color: #4b6cb7;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.button-group.signup::before {
+    transform: translateX(100%);
+}
+
+.button-group button.active {
+    color: white;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.container {
+    animation: fadeIn 1s ease-out;
+}

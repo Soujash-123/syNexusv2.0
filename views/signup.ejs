@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyNEXUS - Sign Up</title>
+    <link rel="stylesheet" href="/css/auth-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1><span class="sy">Sy</span>NEXUS</h1>
+        <div class="button-group signup">
+            <button id="loginBtn">Login</button>
+            <button id="signupBtn">Sign Up</button>
+        </div>
+        <% if (locals.error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+        <form action="/signup" method="POST" onsubmit="return validatePassword()">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+
+        const loginBtn = document.getElementById('loginBtn');
+        const signupBtn = document.getElementById('signupBtn');
+        const buttonGroup = document.querySelector('.button-group');
+
+        loginBtn.addEventListener('click', () => {
+            buttonGroup.classList.remove('signup');
+            window.location.href = '/login';
+        });
+
+        signupBtn.addEventListener('click', () => {
+            buttonGroup.classList.add('signup');
+            window.location.href = '/signup';
+        });
+
+        // Set initial state based on current page
+        if (window.location.pathname === '/signup') {
+            buttonGroup.classList.add('signup');
+        }
+    </script>
+</body>
+</html>
