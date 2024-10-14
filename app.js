@@ -14,14 +14,7 @@ const app = express();
 
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAH-EO8q2iY_rkpBNV7sEUPnfbe7V205fE",
-    authDomain: "nexus-19c34.firebaseapp.com",
-    projectId: "nexus-19c34",
-    storageBucket: "nexus-19c34.appspot.com",
-    messagingSenderId: "170750079301",
-    appId: "1:170750079301:web:6c7a794c1085b914c44e2c",
-    measurementId: "G-8DDWBMNCY8"
-};
+    };
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
